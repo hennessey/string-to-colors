@@ -1,0 +1,11 @@
+{
+  "name": "stringtocolors",
+  "version": "0.0.1",
+  "description": "Converts strings to color values",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "john hennessey",
+  "license": "ISC"
+}
