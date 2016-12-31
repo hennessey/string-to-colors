@@ -1,4 +1,4 @@
-const RGBtoHSL = require('../converters/RGBtoHSL');
+const RGB_HSL = require('../converters/RGB_HSL');
 
 function RGB(red, green, blue) {
     this.red = red;
@@ -7,7 +7,7 @@ function RGB(red, green, blue) {
 };
 
 RGB.prototype.toHSL = function() {
-  return RGBtoHSL(this);
+  return RGB_HSL(this);
 };
 
 module.exports = RGB;

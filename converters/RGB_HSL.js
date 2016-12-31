@@ -1,6 +1,6 @@
 const HSL = require('../data-objects/HSL');
 
-function RGBtoHSL(rgb) {
+function RGB_HSL(rgb) {
   //Convert ranges 0..255 to 0..1
   const r = rgb.red / 255;   //233 = .9137
   const g = rgb.green / 255; //24 = .8235
@@ -49,4 +49,4 @@ function RGBtoHSL(rgb) {
   return hsl;
 };
 
-module.exports = RGBtoHSL;
+module.exports = RGB_HSL;

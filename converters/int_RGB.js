@@ -1,6 +1,6 @@
 const RGB = require('../data-objects/RGB');
 
-function intToRGB(int) {
+function int_RGB(int) {
   const blue = int & 255;
   const green = (int >> 8) & 255;
   const red = (int >> 16) & 255;
@@ -8,4 +8,4 @@ function intToRGB(int) {
   return new RGB(red, green, blue);
 };
 
-module.exports = intToRGB;
+module.exports = int_RGB;
