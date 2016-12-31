@@ -1,4 +1,4 @@
-const RGB = require('./rgb');
+const RGB = require('../data-objects/RGB');
 
 function intToRGB(int) {
   const blue = int & 255;

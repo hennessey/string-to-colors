@@ -1,4 +1,4 @@
-const HSL = require('./hsl');
+const HSL = require('../data-objects/HSL');
 
 function RGBtoHSL(rgb) {
   //Convert ranges 0..255 to 0..1
@@ -41,7 +41,7 @@ function RGBtoHSL(rgb) {
   if (delta === 0) {
     hsl.sat = 0;
   } else if (hsl.light > 0.5 ){
-    hsl.sat = delta / ( 2 - (cMAX + cMIN) ); 
+    hsl.sat = delta / ( 2 - (cMAX + cMIN) );
   } else {
     hsl.sat = delta / (cMAX + cMIN);
   }

@@ -1,5 +1,5 @@
-const intToRgb = require('./intToRgb');
-const RGB = require('./rgb');
+const intToRgb = require('./converters/intToRGB');
+const RGB = require('./data-objects/RGB');
 
 String.prototype.getHashCode = function() {
   let hash = 0;
