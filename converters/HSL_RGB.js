@@ -27,12 +27,11 @@ function HSL_RGB(hsl) {
       rgbP = [ C, 0, X ];
   }
 
-  debugger;
   const r = Math.floor((rgbP[0] + m) * 255);
   const g = Math.floor((rgbP[1] + m) * 255);
   const b = Math.floor((rgbP[2] + m) * 255);
 
-  return [ r, g, b ];
+  return new RGB(r, g, b);;
 };
 
 module.exports = HSL_RGB;
