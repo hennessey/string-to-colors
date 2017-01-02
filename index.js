@@ -27,3 +27,5 @@ function stringToColors(str, harmony) {
 function hueToHSL(newHue, baseHue) {
   return new HSL(newHue, baseHue.sat, baseHue.light);
 }
+
+module.exports = stringToColors;
