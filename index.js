@@ -3,6 +3,10 @@ const javaHash = require('./hashes/java-hash');
 const HSL = require('./data-objects/HSL');
 const RGB_HSL = require('./converters/RGB_HSL');
 const triadic = require('./harmonies/triadic');
+const complimentary = require('./harmonies/complimentary');
+const splitComplimentary = require('./harmonies/split-complimentary');
+const tetradic = require('./harmonies/tetradic');
+const analagous = require('./harmonies/analagous');
 const HSL_RGB = require('./converters/HSL_RGB');
 const RGB_hex = require('./converters/RGB_hex');
 
@@ -14,7 +18,8 @@ function stringToColors(str, harmony) {
   const hash = javaHash(str);
   const asRGB = int_RGB(hash);
   const asHSL = RGB_HSL(asRGB);
-  const harmonicHues = triadic(asHSL);
+
+  const harmonicHues = (harmony) ? harmony(asHSL) : triadic(asHSL);
 
   const harmonicHexes = harmonicHues
     .map(hue => hueToHSL(hue, asHSL))
@@ -28,4 +33,13 @@ function hueToHSL(newHue, baseHue) {
   return new HSL(newHue, baseHue.sat, baseHue.light);
 }
 
-module.exports = stringToColors;
+module.exports = {
+  stringToColors: stringToColors,
+  harmonies: {
+    triadic: triadic,
+    tetradic: tetradic,
+    complimentary: complimentary,
+    splitComplimentary: splitComplimentary,
+    analagous: analagous
+  }
+};
