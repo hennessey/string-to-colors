@@ -10,9 +10,12 @@ const analagous = require('./harmonies/analagous');
 const HSL_RGB = require('./converters/HSL_RGB');
 const RGB_hex = require('./converters/RGB_hex');
 
+function hueToHSL(newHue, baseHue) {
+  return new HSL(newHue, baseHue.sat, baseHue.light);
+}
 
-//@@param string => a string to generate gradient for
-//@@param harmony => optional argument for which color harmony to use to generate
+// @@param string => a string to generate gradient for
+// @@param harmony => optional argument for which color harmony to use to generate
 // color set
 function stringToColors(str, harmony) {
   const hash = javaHash(str);
@@ -26,20 +29,17 @@ function stringToColors(str, harmony) {
     .map(hsl => HSL_RGB(hsl))
     .map(rgb => RGB_hex(rgb));
 
-    return harmonicHexes;
-};
-
-function hueToHSL(newHue, baseHue) {
-  return new HSL(newHue, baseHue.sat, baseHue.light);
+  return harmonicHexes;
 }
 
+
 module.exports = {
-  stringToColors: stringToColors,
+  stringToColors,
   harmonies: {
-    triadic: triadic,
-    tetradic: tetradic,
-    complimentary: complimentary,
-    splitComplimentary: splitComplimentary,
-    analagous: analagous
-  }
+    triadic,
+    tetradic,
+    complimentary,
+    splitComplimentary,
+    analagous,
+  },
 };

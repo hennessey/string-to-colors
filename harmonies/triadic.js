@@ -4,6 +4,6 @@ function triadic(hsl) {
   const z = (y + 120) % 360;
 
   return [x, y, z];
-};
+}
 
 module.exports = triadic;

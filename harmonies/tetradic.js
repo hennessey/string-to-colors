@@ -5,6 +5,6 @@ function tetradic(hsl) {
   const d = (c + 90) % 360;
 
   return [a, b, c, d];
-};
+}
 
 module.exports = tetradic;

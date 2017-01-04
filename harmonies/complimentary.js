@@ -3,6 +3,6 @@ function complimentary(hsl) {
   const compliment = (base + 180) % 360;
 
   return [base, compliment];
-};
+}
 
 module.exports = complimentary;

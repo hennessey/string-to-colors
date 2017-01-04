@@ -4,6 +4,6 @@ function splitComplimentary(hsl) {
   const z = (y + 60) % 360;
 
   return [x, y, z];
-};
+}
 
 module.exports = splitComplimentary;

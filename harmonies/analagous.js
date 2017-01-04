@@ -3,7 +3,7 @@ function analagous(hsl) {
   const a = ((b - 30) + 360) % 360;
   const c = (b + 30) % 360;
 
-  return [ a, b, c ];
-};
+  return [a, b, c];
+}
 
 module.exports = analagous;
