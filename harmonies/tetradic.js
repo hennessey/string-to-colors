@@ -7,4 +7,4 @@ function tetradic(hsl) {
   return [a, b, c, d];
 };
 
-modules.exports = tetradic;
+module.exports = tetradic;

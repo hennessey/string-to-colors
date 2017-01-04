@@ -4,3 +4,5 @@ function complimentary(hsl) {
 
   return [base, compliment];
 };
+
+module.exports = complimentary;

@@ -6,4 +6,4 @@ function splitComplimentary(hsl) {
   return [x, y, z];
 };
 
-modules.exports = splitComplimentary;
+module.exports = splitComplimentary;
