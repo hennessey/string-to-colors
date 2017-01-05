@@ -6,7 +6,7 @@ function HSL_RGB(hsl) {
   const sat = hsl.sat;
 
   const C = (1 - Math.abs((2 * light) - 1)) * sat;
-  const X = (C * (1 - Math.abs((hue / 60) % 2) - 1));
+  const X = (C * (1 - Math.abs(((hue / 60) % 2) - 1)));
   const m = light - (C / 2);
 
   let rgbP = [0, 0, 0];
@@ -20,7 +20,7 @@ function HSL_RGB(hsl) {
   } else if (hue >= 120 && hue < 180) {
     rgbP = [0, C, X];
   } else if (hue >= 180 && hue < 240) {
-    rgbP = [0, C, X];
+    rgbP = [0, X, C];
   } else if (hue >= 240 && hue < 300) {
     rgbP = [X, 0, C];
   } else if (hue >= 300 && hue < 360) {
