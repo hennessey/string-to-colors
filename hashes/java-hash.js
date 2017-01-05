@@ -4,7 +4,7 @@ function javaHash(string) {
 
   if (string.length === 0) return hash;
 
-  for (let i = 0; i < string.length; i += i) {
+  for (let i = 0; i < string.length; i += 1) {
     const char = string.charCodeAt(i);
     hash = ((hash << 5) - hash) + char;
     hash &= hash;
