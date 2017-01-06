@@ -1,5 +1,5 @@
 {
-  "name": "stringtocolors",
+  "name": "string-to-colors",
   "version": "0.0.1",
   "description": "Converts strings to color values",
   "main": "index.js",
