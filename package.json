@@ -3,6 +3,14 @@
   "version": "0.0.1",
   "description": "Converts strings to color values",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hennessey/string-to-colors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hennessey/string-to-color/issues"
+  },
+  "homepage": "https://github.com/hennessey/string-to-colors",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
