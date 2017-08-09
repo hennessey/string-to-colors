@@ -1,5 +1,4 @@
 const int_RGB = require('./converters/int_RGB');
-const javaHash = require('./hashes/java-hash');
 const HSL = require('./data-objects/HSL');
 const RGB_HSL = require('./converters/RGB_HSL');
 const HSL_pastelHSL = require('./converters/HSL_pastelHSL');
