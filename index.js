@@ -9,6 +9,7 @@ const tetradic = require('./harmonies/tetradic');
 const analagous = require('./harmonies/analagous');
 const HSL_RGB = require('./converters/HSL_RGB');
 const RGB_hex = require('./converters/RGB_hex');
+const simpleHex = require('./hashes/simple-hex');
 
 function hueToHSL(newHue, baseHue) {
   return new HSL(newHue, baseHue.sat, baseHue.light);
@@ -17,13 +18,23 @@ function hueToHSL(newHue, baseHue) {
 // @@param string => a string to generate gradient for
 // @@param harmony => optional argument for which color harmony to use to generate
 // color set
-function stringToColors(str, harmony) {
-  const hash = javaHash(str);
+function stringToColors(
+  str,
+  config = {
+    prettyMode: false,
+    harmony: triadic,
+  },
+) {
+  const hash = simpleHex(str);
   const asRGB = int_RGB(hash);
   const asHSL = RGB_HSL(asRGB);
   const asPastelHSL = HSL_pastelHSL(asHSL);
 
-  const harmonicHues = (harmony) ? harmony(asPastelHSL) : triadic(asPastelHSL);
+  const { harmony, usePastel } = config;
+  const rawHSL = asHSL;
+
+  const harmonyToUse = harmony || triadic;
+  const harmonicHues = usePastel ? harmonyToUse(asPastelHSL) : harmonyToUse(rawHSL);
 
   const harmonicHexes = harmonicHues
     .map(hue => hueToHSL(hue, asPastelHSL))
